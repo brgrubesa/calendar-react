@@ -1,0 +1,179 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+h2 {
+  font-size: 1.5em; 
+  background-color: #009879;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px auto;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+}
+
+.styled-table thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: center;
+}
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #000;
+  width: 120px;
+  box-sizing: border-box;
+  height: 80px;
+}
+
+.styled-table td:hover {
+  background-color: #f0f0f0;
+}
+
+.styled-table tbody tr {
+  border-bottom: 1px solid #000;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+  font-weight: bold;
+  color: #009879;
+}
+
+
+
+/*message*/
+.selected-day-message {
+  background-color: #009879;
+  color: white; 
+  padding: 15px;
+  border-radius: 10px; 
+  margin-top: 10px;
+}
+
+.selected-day-message h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.selected-day-message p {
+  font-size: 1.2em;
+}
+
+
+
+/* Loading and Error Messages */
+.loading-error-messages {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.loading-error-messages p {
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+/* Navigation Buttons */
+.navigation-buttons {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.navigation-buttons button {
+  background-color: #009879;
+  color: white;
+  padding: 10px 20px;
+  margin: 0 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.navigation-buttons button:hover {
+  background-color: #007765;
+}
+
+.decorative-hr {
+  border: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #009879, transparent);
+  margin: 20px 0;
+}
+
+.calendar-day {
+  position: relative;
+  padding: 5px;
+  width: 100px;
+  height: 100px;
+  transition: background-color 0.3s;
+}
+
+.calendar-day-number {
+  font-size: 0.8em;
+  position: absolute;
+  top: 5px; 
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: #009879;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.event-container {
+  margin-top: 5px; 
+  height: 75px;
+  overflow: hidden;
+}

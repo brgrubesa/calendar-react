@@ -1,24 +1,87 @@
-# Getting Started with Create React App
+# Calendar GitHub Commits App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This React.js application displays GitHub commits in a calendar format. Users can navigate through months, view commit messages, and get details for selected dates.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Introduction](#introduction)
+- [Components](#components)
+  - [1. api/Api.js](#1-apiapijs)
+  - [2. components/Home.js](#2-componentshomejs)
+  - [3. components/Calendar.js](#3-componentscalendarjs)
+- [Usage](#usage)
+- [Dependencies](#dependencies)
+- [Additional Notes](#additional-notes)
 
-### `npm start`
+## Introduction
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This is a React.js application that serves as a calendar displaying GitHub commits. The app fetches commit data from a GitHub repository within a specified date range and presents it in a calendar format. Users can navigate through months, view commit messages, and get details for selected dates.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Components
 
-## Configuration
+### 1. api/Api.js
 
-This application requires specific environment variables to be set in a `.env` file to work with GitHub repositories. You need to define the following variables in your `.env` file:
+- **fetchCommits(firstDay, lastDay):** 
+  - Fetches GitHub commits within a specified date range.
+  - Parameters:
+    - `firstDay`: Start date.
+    - `lastDay`: End date.
+  - Returns: Promise containing commit data.
 
-- `REACT_APP_REPO_OWNER`: The owner or organization name of the target GitHub repository.
-- `REACT_APP_REPO_NAME`: The name of the target GitHub repository.
+### 2. components/Home.js
 
-Make sure to set these variables correctly to ensure the application functions as expected. You can obtain these values from your GitHub repository's URL. For example, if your GitHub repository URL is `https://github.com/your-username/your-repo`, then `your-username` is the `REACT_APP_REPO_OWNER`, and `your-repo` is the `REACT_APP_REPO_NAME`.
+- **State:**
+  - `data`: GitHub commit data.
+  - `loading`: Loading state.
+  - `error`: Error state.
+  - `messagesAndDates`: Processed commit messages and dates.
+  - `currentMonth`: Current month for calendar display.
+
+- **Functions:**
+  - `goToPreviousMonth()`: Navigates to the previous month.
+  - `goToNextMonth()`: Navigates to the next month.
+
+- **Effects:**
+  - Fetches commit data when the `currentMonth` changes.
+  - Processes commit data into a readable format.
+
+- **Rendering:**
+  - Displays loading or error messages.
+  - Presents navigation buttons and the calendar component.
+
+### 3. components/Calendar.js
+
+- **Props:**
+  - `currentMonth`: Current month for calendar display.
+  - `data`: Processed commit messages and dates.
+
+- **State:**
+  - `selectedDay`: Currently selected date.
+
+- **Functions:**
+  - `handleDayClick(dayDate)`: Handles click events on calendar days.
+
+- **Rendering:**
+  - Displays a table of calendar days with commit messages.
+  - Shows details for the selected day when clicked.
+
+## Usage
+
+1. Install dependencies: `npm install`
+2. Set up environment variables:
+   - `REACT_APP_REPO_OWNER`: GitHub repository owner.
+   - `REACT_APP_REPO_NAME`: GitHub repository name.
+   - `REACT_APP_API_KEY`: GitHub API token.
+3. Run the application: `npm start`
+
+## Dependencies
+
+- `moment`: For handling date and time.
+- `react`: JavaScript library for building user interfaces.
+- `react-router-dom`: React router for navigation.
+
+## Additional Notes
+
+- This application utilizes the GitHub API to fetch commit data. Ensure that your GitHub API token has the necessary permissions.
+
+Feel free to customize and expand this documentation based on your specific needs and additional features.

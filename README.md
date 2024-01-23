@@ -84,4 +84,3 @@ This is a React.js application that serves as a calendar displaying GitHub commi
 
 - This application utilizes the GitHub API to fetch commit data. Ensure that your GitHub API token has the necessary permissions.
 
-Feel free to customize and expand this documentation based on your specific needs and additional features.
